@@ -1,0 +1,7 @@
+{
+  "name": "StudentManagementApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

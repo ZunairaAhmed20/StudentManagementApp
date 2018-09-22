@@ -1,0 +1,67 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--<ion-navbar>
+    <ion-title>Suffah School Management System</ion-title>
+  </ion-navbar>
+-->
+</ion-header>
+
+
+<ion-content padding>
+  <ion-img style="width: 340px; height: 186px; margin-top: 10px; margin-right: 25%;" src="../assets/imgs/school-management-system-masters-logo.png" ></ion-img>
+
+<ion-buttons >
+  <button  style="margin-top: 20px;margin-left:86px;margin-bottom: 20px" ion-button navPush="AddSongPage">Add New Student</button>
+  <!--<button  style="margin-top: 40px;"ion-button navPush="RegisterPage">Add Class</button>-->
+</ion-buttons>
+
+<!-- <ion-list>
+  <ion-item style="margin-top: 10px; ">
+      <ion-label >Select Class</ion-label>
+      <ion-select (ionChange)="onContextChange($event)" [(ngModel)]="bands" multiple="false"
+      cancelText="cancel" okText="Select!">
+      <ion-option *ngFor="let band of bandsList$ | async"
+      
+      detail-push>{{band.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list> -->
+
+<ion-list>
+  <ion-list-header>
+    <b style="margin-top: 50px; margin-left: 60px;border-style: solid ;padding:20px;border-color: lightblue; font-size: 20px; font-family: Times New Roman; color: Black">
+    Students' Names</b>
+  </ion-list-header>
+  
+  <ion-item style="font-size: 19px;margin-left: 53px"
+    *ngFor="let student of studentsList$ | async"
+    detail-push navPush="ViewSongPage"[navParams]="{student:IStudent}">
+
+    <i class="fa fa-gg">  {{ student.name}}</i>
+  </ion-item>
+</ion-list>
+
+<!--<ion-buttons>
+  
+  <button ion-button navPush="LoginPage">
+    Login
+  </button>
+  
+  <button ion-button (click)="showAllSongs()">
+      Show All Songs
+  </button>  
+  
+  <button ion-button navPush="InvitePage">
+        Invite
+  </button>
+
+</ion-buttons> -->
+
+</ion-content>
